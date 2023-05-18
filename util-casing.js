@@ -88,37 +88,40 @@ function changeCase(valueAsString, caseType) {
   const keepChars = ['$', '@']
   const normCaseType = camelCase(caseType)
 
+  // BUG underscores are stripped from the beginning of values
+  let prepend = valueAsString.startsWith("_", 0) ? '_' : ''
+
   switch (normCaseType) {
     case "camelCase":
-      return camelCase(valueAsString, {keep: keepChars})
+      return prepend.concat(camelCase(valueAsString, {keep: keepChars}))
     case "pascalCase":
     case "upperCamelCase":
-      return pascalCase(valueAsString, {keep: keepChars})
+      return prepend.concat(pascalCase(valueAsString, {keep: keepChars}))
     case "kebabCase":
     case "kebapCase":
-      return kebabCase(valueAsString, {keep: keepChars})
+      return prepend.concat(kebabCase(valueAsString, {keep: keepChars}))
     case "trainCase":
     case "capitalKebabCase":
     case "capitalKebapCase":
-      return trainCase(valueAsString, {keep: keepChars})
+      return prepend.concat(trainCase(valueAsString, {keep: keepChars}))
     case "snakeCase":
-      return snakeCase(valueAsString, {keep: keepChars})
+      return prepend.concat(snakeCase(valueAsString, {keep: keepChars}))
     case "adaCase":
-      return adaCase(valueAsString, {keep: keepChars})
+      return prepend.concat(adaCase(valueAsString, {keep: keepChars}))
     case "constantCase":
-      return constantCase(valueAsString, {keep: keepChars})
+      return prepend.concat(constantCase(valueAsString, {keep: keepChars}))
     case "cobolCase":
-      return cobolCase(valueAsString, {keep: keepChars})
+      return prepend.concat(cobolCase(valueAsString, {keep: keepChars}))
     case "dotNotation":
-      return dotNotation(valueAsString, {keep: keepChars})
+      return prepend.concat(dotNotation(valueAsString, {keep: keepChars}))
     case "spaceCase":
-      return spaceCase(valueAsString, {keep: keepChars})
+      return prepend.concat(spaceCase(valueAsString, {keep: keepChars}))
     case "capitalCase":
-      return capitalCase(valueAsString, {keep: keepChars})
+      return prepend.concat(capitalCase(valueAsString, {keep: keepChars}))
     case "lowerCase":
-      return lowerCase(valueAsString, {keep: keepChars})
+      return prepend.concat(lowerCase(valueAsString, {keep: keepChars}))
     case "upperCase":
-      return upperCase(valueAsString, {keep: keepChars})
+      return prepend.concat(upperCase(valueAsString, {keep: keepChars}))
     default:
       return valueAsString
   }

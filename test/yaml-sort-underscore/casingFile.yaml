@@ -1,0 +1,18 @@
+# https://www.npmjs.com/package/openapi-format
+operationId: camelCase
+properties: camelCase
+
+parametersQuery: camelCase
+parametersHeader: camelCase
+parametersPath: camelCase
+
+componentsExamples: PascalCase
+componentsSchemas: PascalCase
+componentsHeaders: camelCase
+componentsResponses: camelCase
+componentsRequestBodies: camelCase
+componentsSecuritySchemes: camelCase
+
+componentsParametersQuery: camelCase
+componentsParametersHeader: camelCase
+componentsParametersPath: camelCase

@@ -116,5 +116,11 @@ describe('openapi-format CLI casing tests', () => {
     it('casing should not match', async () => {
       expect(of.changeCase(str, 'foo bar')).toBe('openapi-format');
     });
+    it('casing should retain beginning underscore', async () => {
+      expect(of.changeCase('_keep_beginning_underscore', 'camelCase')).toBe('_keepBeginningUnderscore');
+    });
+    it('casing should retain beginning underscore on a kebab', async () => {
+      expect(of.changeCase('_keep_beginning_underscore', 'kebab-case')).toBe('_keep-beginning-underscore');
+    });
   });
 });
